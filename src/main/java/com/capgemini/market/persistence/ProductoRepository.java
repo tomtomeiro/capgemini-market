@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
-@Repository/*Interactua con La BD*/
+@Repository/*Para especificar que es un componente que Interactua con La BD*/
 //@Component/*Es un componente de Spring*/
 public class ProductoRepository implements ProductRepository {
     @Autowired // solo sirve con componentes de spring
@@ -82,6 +82,11 @@ public class ProductoRepository implements ProductRepository {
     @Override
     public  void delete(Integer idProducto){
          productoCrudRepository.deleteById(idProducto);
+    }
+
+    //Actualizar nombre del producto por id
+    public void saveProducto(String nombre,Integer idProducto){
+        productoCrudRepository.saveByNombreSetIdProducto(nombre, idProducto);
     }
 
 

@@ -22,6 +22,11 @@ public interface ProductoCrudRepository extends CrudRepository<Producto,Integer>
     Optional<List<Producto>> findByCantidadStockLessThanAndEstado(Integer cantidadStock, Boolean estado);
 
 
+    //Actualizar nombre del producto por id
+    @Query(value= "UPDATE productos set nombre=? where id_producto=?", nativeQuery = true )
+    Producto saveByNombreSetIdProducto(String nombre, Integer idProducto);
+    ////Actualizar nombre del producto por id con QueryMethods
+    List<Producto> updateNombreById(String nombre, Integer idProducto);
 
 
 }
