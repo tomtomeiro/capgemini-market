@@ -23,10 +23,10 @@ public interface ProductoCrudRepository extends CrudRepository<Producto,Integer>
 
 
     //Actualizar nombre del producto por id
-    @Query(value= "UPDATE productos set nombre=? where id_producto=?", nativeQuery = true )
+   /* @Query(value= "UPDATE productos set nombre=? where id_producto=?", nativeQuery = true )
     Producto saveByNombreSetIdProducto(String nombre, Integer idProducto);
     ////Actualizar nombre del producto por id con QueryMethods
     List<Producto> updateNombreById(String nombre, Integer idProducto);
-
+*/
 
 }

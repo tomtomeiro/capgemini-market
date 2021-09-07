@@ -2,24 +2,39 @@ package com.capgemini.market.web.controller;
 
 import com.capgemini.market.domain.Product;
 import com.capgemini.market.domain.service.ProductService;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
-@RestController
+@RestController//Controlador de API REST
 @RequestMapping("/api/products")
 public class ProductController {
     @Autowired
     private ProductService productService;
     @GetMapping("/all")
-    public List<Product> getAll(){
-        return productService.getAll();
+    @ApiOperation("Get all supermarket product")
+    @ApiResponse(code=200, message = "OK")
+    public ResponseEntity<List<Product>> getAll(){
+
+        return new ResponseEntity<>( productService.getAll(), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public Optional<Product> getProduct(@PathVariable("id") Integer productId){
+    @ApiOperation("Search a product with and ID")
+    @ApiResponses({
+            @ApiResponse(code = 200, message = "ok"),
+            @ApiResponse(code=404, message = "Product not found")
+    })
+    public Optional<Product> getProduct(@ApiParam(value="The id of the product",
+            required = true, example = "7") @PathVariable("id") Integer productId){
         return productService.getProduct(productId);
     }
     @GetMapping("/category/{categoryId}")

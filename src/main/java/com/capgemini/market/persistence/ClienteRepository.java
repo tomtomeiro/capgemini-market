@@ -1,4 +1,4 @@
-package com.capgemini.market.persistence;
+/*package com.capgemini.market.persistence;
 
 import com.capgemini.market.persistence.crud.ClienteCrudRepository;
 import com.capgemini.market.persistence.entity.Cliente;
@@ -31,3 +31,4 @@ public class ClienteRepository {
     //named Qquery
 
 }
+*/

@@ -1,4 +1,4 @@
-package com.capgemini.market.domain.repository;
+/*package com.capgemini.market.domain.repository;
 
 import com.capgemini.market.domain.Client;
 import com.capgemini.market.domain.Product;
@@ -13,4 +13,4 @@ public interface ClientRepository {
     void delete(Integer clientId);
 
 
-}
+}*/

@@ -85,9 +85,9 @@ public class ProductoRepository implements ProductRepository {
     }
 
     //Actualizar nombre del producto por id
-    public void saveProducto(String nombre,Integer idProducto){
+    /*public void saveProducto(String nombre,Integer idProducto){
         productoCrudRepository.saveByNombreSetIdProducto(nombre, idProducto);
-    }
+    }*/
 
 
 

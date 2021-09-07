@@ -1,4 +1,4 @@
-package com.capgemini.market.domain.service;
+/*package com.capgemini.market.domain.service;
 
 import com.capgemini.market.domain.Client;
 import com.capgemini.market.domain.repository.ClientRepository;
@@ -36,9 +36,10 @@ public class ClientService {
             return true;
         }else {
             return false;
-        }*/
+        }*//*
     }
 
 
 
 }
+*/
